@@ -1,0 +1,488 @@
+Part 1
+
+
+### 1. **Git and GitHub Review:**
+
+#### **Why Use Git?**
+- **Version Control with Branching:**
+  - Allows multiple developers to work on different parts of a project simultaneously.
+  - Example: A developer working on a new feature creates a branch `feature-login`. Changes made on this branch do not affect the `main` branch until merged.
+- **Local Repositories:**
+  - Each developer has a complete copy of the repository.
+  - If a mistake is made or data is lost, the repository can be restored from any developer's local copy.
+
+#### **Basic Git Operations:**
+- **Creating a Repository:**
+  - Using Terminal: `git clone 'url'`
+  - Using an App: Go to `File > Clone repository`, paste the repository URL.
+- **Adding and Committing Changes:**
+  ```bash
+  git status  # Check the status of files
+  git add .  # Add all changed files to the staging area
+  git commit -m "Added login functionality"  # Commit changes with a message
+  git push  # Push changes to the remote repository
+  ```
+- **Examining Project History:**
+  - `git log` shows the commit history of the project, helping track changes over time.
+
+#### **Branching and Forking:**
+- **Branching:**
+  - Useful for working on features or bug fixes independently.
+  ```bash
+  git branch feature-login  # Create a new branch
+  git checkout feature-login  # Switch to the new branch
+  ```
+- **Forking:**
+  - Creating a personal copy of someone else's repository.
+  - Use this when you want to contribute to a project without affecting the original repo directly.
+- **Pull Requests:**
+  - A way to propose changes to the original repository.
+  - Example: After modifying the `feature-login` branch, you can create a pull request to merge these changes into the `main` branch.
+
+#### **Conflict Resolution:**
+- Occurs when changes from different branches conflict.
+- Example:
+  ```bash
+  git merge feature-login
+  ```
+  If conflicts arise, Git will mark them in the files. You will need to manually resolve and then commit the changes.
+
+---
+
+### 2. **Python Basics and Flow Control:**
+
+#### **Introduction to Python:**
+- **Basic Syntax:**
+  ```python
+  print("Hello, World!")  # Output: Hello, World!
+  ```
+- **Data Types:**
+  - Integers, floats, strings, lists, tuples, dictionaries.
+  ```python
+  num = 10
+  pi = 3.14
+  name = "Data Science"
+  my_list = [1, 2, 3, 4]
+  ```
+
+#### **Flow Control in Python:**
+- **Conditionals:**
+  ```python
+  age = 18
+  if age >= 18:
+      print("You are an adult.")
+  elif age < 18:
+      print("You are a minor.")
+  else:
+      print("Invalid age.")
+  ```
+- **Loops:**
+  - **For Loop:**
+    ```python
+    for i in range(5):
+        print(i)  # Output: 0 1 2 3 4
+    ```
+  - **While Loop:**
+    ```python
+    count = 0
+    while count < 5:
+        print(count)
+        count += 1  # Output: 0 1 2 3 4
+    ```
+- **Functions:**
+  ```python
+  def greet(name):
+      return f"Hello, {name}!"
+  
+  print(greet("Alice"))  # Output: Hello, Alice!
+  ```
+
+#### **Advanced Flow Control:**
+- **List Comprehensions:**
+  ```python
+  squares = [x**2 for x in range(10)]
+  print(squares)  # Output: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+  ```
+- **Exception Handling:**
+  ```python
+  try:
+      result = 10 / 0
+  except ZeroDivisionError:
+      print("Cannot divide by zero.")
+  ```
+
+---
+
+### 3. **Bash and Command Line:**
+
+#### **Introduction to Bash Scripting:**
+- **Basic Commands:**
+  - Navigating directories:
+    ```bash
+    cd /path/to/directory  # Change directory
+    ls  # List files in the current directory
+    ```
+  - Creating and deleting files:
+    ```bash
+    touch newfile.txt  # Create a new file
+    rm newfile.txt  # Delete a file
+    ```
+  
+#### **Command Line Operations:**
+- **Running Scripts:**
+  ```bash
+  bash script.sh  # Execute a bash script
+  ```
+- **Setting Permissions:**
+  ```bash
+  chmod +x script.sh  # Make a script executable
+  ```
+- **Writing a Simple Bash Script:**
+  ```bash
+  #!/bin/bash
+  echo "Hello, World!"  # Print a message to the terminal
+  ```
+  Save this as `hello.sh`, make it executable (`chmod +x hello.sh`), and run it with `./hello.sh`.
+
+---
+
+### 4. **Python Reinforcement and Advanced Concepts:**
+
+#### **List Comprehensions:**
+- More concise and readable code for creating lists.
+  ```python
+  even_numbers = [x for x in range(20) if x % 2 == 0]
+  print(even_numbers)  # Output: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+  ```
+
+#### **Advanced Python Techniques:**
+- **Decorators:**
+  - Functions that modify the behavior of other functions.
+  ```python
+  def my_decorator(func):
+      def wrapper():
+          print("Something is happening before the function is called.")
+          func()
+          print("Something is happening after the function is called.")
+      return wrapper
+
+  @my_decorator
+  def say_hello():
+      print("Hello!")
+
+  say_hello()
+  # Output:
+  # Something is happening before the function is called.
+  # Hello!
+  # Something is happening after the function is called.
+  ```
+- **Lambda Functions:**
+  - Small, anonymous functions.
+  ```python
+  add = lambda x, y: x + y
+  print(add(2, 3))  # Output: 5
+  ```
+- **File Handling:**
+  ```python
+  with open('example.txt', 'w') as file:
+      file.write("Hello, World!")
+
+  with open('example.txt', 'r') as file:
+      content = file.read()
+      print(content)  # Output: Hello, World!
+  ```
+
+#### **Code Optimization:**
+- Using built-in functions like `map()`, `filter()`, and `reduce()` for more efficient code.
+  ```python
+  nums = [1, 2, 3, 4, 5]
+  squared = map(lambda x: x**2, nums)
+  print(list(squared))  # Output: [1, 4, 9, 16, 25]
+  ```
+
+---
+
+### Summary:
+- **Git and GitHub:** Covered essential concepts of version control, including how to clone, branch, and merge repositories. You learned how to manage a project’s history, handle conflicts, and collaborate efficiently using Git’s branching and forking features.
+- **Python Basics and Flow Control:** You were introduced to Python syntax, data types, conditionals, loops, and functions. Advanced flow control techniques, including list comprehensions and error handling, were also covered.
+- **Bash and Command Line:** Focused on basic command-line operations and scripting. You learned how to navigate directories, manipulate files, and automate tasks using Bash scripts.
+- **Python Reinforcement and Advanced Concepts:** Reinforced Python skills with a focus on advanced topics like decorators, lambda functions, and file handling. Learned how to write concise, efficient, and readable code.
+
+This comprehensive summary, with examples, should help you recall the key concepts and provide a quick reference to revisit what you've learned. If you need further details on any specific topic or more examples, feel free to ask!
+
+
+
+Part 2
+---
+
+### 1. **Error Handling in Python:**
+
+#### **Basics of Error Handling:**
+- Errors in Python can be managed using `try`, `except`, `else`, and `finally` blocks.
+- **Example of Basic Error Handling:**
+  ```python
+  try:
+      result = 10 / 0
+  except ZeroDivisionError:
+      print("Cannot divide by zero.")
+  ```
+  - **Output:** `Cannot divide by zero.`
+
+#### **Multiple Exceptions:**
+- Handling different types of exceptions with specific `except` blocks.
+  ```python
+  try:
+      num = int(input("Enter a number: "))
+      result = 10 / num
+  except ValueError:
+      print("Invalid input. Please enter a number.")
+  except ZeroDivisionError:
+      print("Cannot divide by zero.")
+  ```
+  
+#### **Else and Finally:**
+- **`else` Block:** Executes if no exceptions are raised.
+- **`finally` Block:** Executes no matter what, useful for cleanup tasks.
+  ```python
+  try:
+      num = int(input("Enter a number: "))
+      result = 10 / num
+  except ZeroDivisionError:
+      print("Cannot divide by zero.")
+  else:
+      print(f"Result is {result}")
+  finally:
+      print("Execution complete.")
+  ```
+
+#### **Raising Exceptions:**
+- You can raise exceptions intentionally using the `raise` keyword.
+  ```python
+  age = -1
+  if age < 0:
+      raise ValueError("Age cannot be negative.")
+  ```
+
+---
+
+### 2. **Pseudocode:**
+
+#### **Understanding Pseudocode:**
+- Pseudocode is a high-level description of an algorithm or a program.
+- It helps in planning and visualizing the structure of code before actual implementation.
+
+#### **Writing Pseudocode:**
+- Use natural language and structured format to outline the logic.
+- Example of pseudocode for a function to find the maximum of two numbers:
+  ```
+  FUNCTION find_max(a, b):
+      IF a > b THEN
+          RETURN a
+      ELSE
+          RETURN b
+  END FUNCTION
+  ```
+
+#### **Benefits of Pseudocode:**
+- Enhances clarity and understanding of the logic.
+- Helps in identifying potential issues or areas for improvement before coding.
+
+---
+
+### 3. **Functions in Python:**
+
+#### **Defining and Calling Functions:**
+- Functions encapsulate reusable code blocks.
+  ```python
+  def greet(name):
+      return f"Hello, {name}!"
+
+  print(greet("Alice"))  # Output: Hello, Alice!
+  ```
+
+#### **Parameters and Arguments:**
+- Functions can accept parameters and return values.
+  ```python
+  def add(a, b):
+      return a + b
+
+  print(add(3, 5))  # Output: 8
+  ```
+
+#### **Default and Keyword Arguments:**
+- Setting default values for parameters.
+  ```python
+  def power(base, exponent=2):
+      return base ** exponent
+
+  print(power(3))  # Output: 9
+  print(power(3, 3))  # Output: 27
+  ```
+
+#### **Variable-Length Arguments:**
+- Using `*args` and `**kwargs` for functions that accept a varying number of arguments.
+  ```python
+  def multiply(*args):
+      result = 1
+      for num in args:
+          result *= num
+      return result
+
+  print(multiply(2, 3, 4))  # Output: 24
+  ```
+
+---
+
+### 4. **Object-Oriented Programming (OOP):**
+
+#### **Basics of OOP:**
+- Focuses on creating objects that contain both data and methods.
+- **Classes and Objects:**
+  - **Class:** Blueprint for creating objects.
+  - **Object:** Instance of a class.
+
+#### **Defining a Class:**
+  ```python
+  class Dog:
+      def __init__(self, name, age):
+          self.name = name
+          self.age = age
+
+      def bark(self):
+          return "Woof!"
+
+  my_dog = Dog("Buddy", 3)
+  print(my_dog.name)  # Output: Buddy
+  print(my_dog.bark())  # Output: Woof!
+  ```
+
+#### **Inheritance:**
+- Creating a new class from an existing class.
+  ```python
+  class Animal:
+      def __init__(self, name):
+          self.name = name
+
+      def speak(self):
+          return "Some sound"
+
+  class Cat(Animal):
+      def speak(self):
+          return "Meow"
+
+  my_cat = Cat("Whiskers")
+  print(my_cat.speak())  # Output: Meow
+  ```
+
+#### **Polymorphism:**
+- Different classes can have methods with the same name, but different implementations.
+  ```python
+  class Bird:
+      def speak(self):
+          return "Chirp"
+
+  animals = [Dog("Buddy", 3), Cat("Whiskers"), Bird()]
+
+  for animal in animals:
+      print(animal.speak())
+  # Output: Woof!, Meow, Chirp
+  ```
+
+#### **Encapsulation:**
+- Restricting access to methods and variables to protect the integrity of an object.
+  ```python
+  class BankAccount:
+      def __init__(self):
+          self.__balance = 0  # Private attribute
+
+      def deposit(self, amount):
+          if amount > 0:
+              self.__balance += amount
+
+      def get_balance(self):
+          return self.__balance
+
+  account = BankAccount()
+  account.deposit(100)
+  print(account.get_balance())  # Output: 100
+  ```
+
+---
+
+### 5. **Regular Expressions (Regex):**
+
+#### **Basics of Regex:**
+- A powerful tool for matching patterns in strings.
+- Used for searching, extracting, and manipulating text.
+
+#### **Common Regex Patterns:**
+- `\d` – Matches any digit.
+- `\w` – Matches any word character (alphanumeric + underscore).
+- `\s` – Matches any whitespace character.
+- `.` – Matches any character except newline.
+- `*`, `+`, `?`, `{n}` – Quantifiers for specifying number of occurrences.
+
+#### **Using Regex in Python:**
+- Python’s `re` module provides functions like `match()`, `search()`, `findall()`, and `sub()`.
+  ```python
+  import re
+
+  text = "The rain in Spain falls mainly in the plain."
+  result = re.findall(r"\bin\b", text)  # Find all occurrences of "in" as a whole word
+  print(result)  # Output: ['in', 'in']
+  ```
+  
+#### **Examples:**
+- **Email Validation:**
+  ```python
+  email = "example@example.com"
+  pattern = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
+  if re.match(pattern, email):
+      print("Valid email")
+  ```
+- **Replacing Text:**
+  ```python
+  text = "Hello 123, welcome to the year 2024!"
+  new_text = re.sub(r"\d+", "", text)  # Remove all digits
+  print(new_text)  # Output: Hello , welcome to the year !
+  ```
+
+---
+
+### 6. **Map, Filter, and Reduce:**
+
+#### **Map:**
+- Applies a function to all items in an input list (or any iterable).
+  ```python
+  numbers = [1, 2, 3, 4]
+  squared = list(map(lambda x: x ** 2, numbers))
+  print(squared)  # Output: [1, 4, 9, 16]
+  ```
+
+#### **Filter:**
+- Filters items out of a list based on a condition.
+  ```python
+  numbers = [1, 2, 3, 4, 5, 6]
+  evens = list(filter(lambda x: x % 2 == 0, numbers))
+  print(evens)  # Output: [2, 4, 6]
+  ```
+
+#### **Reduce:**
+- Reduces a list to a single value by applying a function cumulatively.
+  ```python
+  from functools import reduce
+
+  numbers = [1, 2, 3, 4]
+  product = reduce(lambda x, y: x * y, numbers)
+  print(product)  # Output: 24
+  ```
+
+### Summary:
+- **Error Handling:** You learned how to handle exceptions, use multiple `except` blocks, and utilize `else` and `finally`. Raising exceptions helps in creating robust applications.
+- **Pseudocode:** Writing high-level algorithm descriptions helps in planning code structure and logic.
+- **Functions in Python:** Covered creating functions, using parameters, default values, and variable-length arguments. Functions help in modularizing and reusing code.
+- **Object-Oriented Programming (OOP):** You explored OOP principles like classes, objects, inheritance, polymorphism, and encapsulation, making it easier to design complex systems.
+- **Regular Expressions (Regex):** Regex is a powerful tool for pattern matching in text. You learned to use patterns and functions in Python's `re` module.
+- **Map, Filter, and Reduce:** Functional programming techniques like `map()`, `filter()`, and `reduce()` help in processing collections in a concise and efficient manner.
+
+This enhanced summary with examples should provide a solid reference for reviewing these concepts. If you need further details or clarification on specific topics, feel free to ask
